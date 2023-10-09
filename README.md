@@ -7,7 +7,7 @@ This repository contains code for a face recognition project that uses depth dat
 ## Installation and Running
 1. pip install requirements.txt 
 
-2. **Build C++ Project**: Navigate to your project directory and execute the following to build project34topixel.cpp:
+2. **Build C++ Project**: Navigate to your project directory and execute the following to build project3dtopixel.cpp:
 
    `cmake CMakeLists.txt && make && ./bin/project3dtopixel`
 
