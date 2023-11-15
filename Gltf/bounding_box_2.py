@@ -182,11 +182,6 @@ if __name__ == "__main__":
     root_folder = "new_entries/test" 
     save_folder = "new_entries/dataset_numpy_test" 
 
-    # if not os.path.exists(save_folder):
-    #     os.makedirs(save_folder)
-    #     os.makedirs(os.path.join(save_folder, "depth_images"))
-    #     os.makedirs(os.path.join(save_folder, "depth_numpy"))
-
     for person_folder in sorted(os.listdir(root_folder)):
         person_path = os.path.join(root_folder, person_folder)
         if os.path.isdir(person_path):
