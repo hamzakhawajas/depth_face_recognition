@@ -1,6 +1,8 @@
 face_recognition
 mediapipe
+numpy
 scipy
 opencv-python
 plyfile
 open3d
+matplotlib
