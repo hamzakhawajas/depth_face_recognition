@@ -1,3 +1,0 @@
-/media/agha/ubuntu-mx500/work/c++project/example/CMakeFiles/project3dtopixel.dir
-/media/agha/ubuntu-mx500/work/c++project/example/CMakeFiles/edit_cache.dir
-/media/agha/ubuntu-mx500/work/c++project/example/CMakeFiles/rebuild_cache.dir
