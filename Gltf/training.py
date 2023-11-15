@@ -8,7 +8,7 @@ from siamese_network import SiameseTrainingDataset
 from siamese_network import ContrastiveLoss
 
 
-folder_path = 'new_entries/dataset_numpy_train2_padded'
+folder_path = 'dataset_numpy_train_padded'
 num_epochs = 15
 
 all_files = []

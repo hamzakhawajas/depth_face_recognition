@@ -14,8 +14,8 @@ def add_center_padding(array, target_shape=(300, 300)):
     return np.pad(array, ((y_pad_top, y_pad_bottom), (x_pad_left, x_pad_right)), 'constant', constant_values=0)
 
 if __name__ == "__main__":
-    input_folder = "new_entries/dataset_numpy_test22"
-    output_folder = "new_entries/dataset_numpy_test22_padded"
+    input_folder = "dataset_numpy_train"
+    output_folder = "dataset_numpy_train_padded"
 
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)

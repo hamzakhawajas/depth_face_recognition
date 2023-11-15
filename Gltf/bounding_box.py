@@ -174,8 +174,8 @@ def process_gltf_file(file_path, person_count, gltf_count, save_folder):
 
 
 if __name__ == "__main__":
-    root_folder = "new_entries/train" 
-    save_folder = "new_entries/dataset_numpy_train1" 
+    root_folder = "train" 
+    save_folder = "dataset_numpy_train"
 
     for person_folder in sorted(os.listdir(root_folder)):
         person_path = os.path.join(root_folder, person_folder)

@@ -88,7 +88,6 @@ def create_point_cloud_from_ply(ply_data):
         print(f"An error occurred while creating the point cloud: {e}")
         return None
 
-# Load GLTF file and extract PLY data
 try:
     with open("new_entries/train/1/1.gltf", "r") as f:
         gltf_data = json.load(f)
@@ -102,11 +101,9 @@ except (KeyError, IndexError) as e:
     print(f"Couldn't find the necessary data in the GLTF file: {e}")
     exit(1)
 
-# Decode the base64-encoded binary data
 base64_data = data_uri.split(",")[-1]
 decoded_data = base64.b64decode(base64_data)
 
-# Read the PLY data from the decoded binary data
 try:
     plydata = PlyData.read(io.BytesIO(decoded_data))
 except Exception as e:
@@ -115,7 +112,6 @@ except Exception as e:
 
 print(plydata)
 
-# Create a point cloud from the PLY data with inverted depth colors
 pcd = create_point_cloud_from_ply(plydata)
 
 # Create a visualizer object for editing
@@ -128,7 +124,7 @@ print("1. Shift + left click to pick points.")
 print("2. Enter key to finish the selection.")
 print("3. Press 'Q' to close the window after you finish the selection.")
 
-vis.run()  # This will block the program until the window is closed
+vis.run()
 vis.destroy_window()
 
 # Retrieve the indices of the selected points
@@ -136,8 +132,6 @@ selected_indices = vis.get_picked_points()
 selected_indices = [pp.index for pp in vis.get_picked_points()]
 #print(selected_indices)
 
-
-# Now, `selected_indices` is a list of integers, which can be used in `select_by_index`
 if len(selected_indices) == 0:
     print("No points were selected.")
 else:
@@ -154,7 +148,6 @@ else:
     y_coordinates = np.asarray(selected_points.points)[:, 1]  # All y coordinates
     z_coordinates = np.asarray(selected_points.points)[:, 2]  # All z coordinates
 
-    # If you want to print the coordinates or process them, you can do it here:
     for x, y, z in zip(x_coordinates, y_coordinates, z_coordinates):
         print(f"X: {x}, Y: {y}, Z: {z}")
 

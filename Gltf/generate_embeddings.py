@@ -21,8 +21,8 @@ net.load_state_dict(state_dict)
 net.to(device)
 net.eval()
 
-numpy_load_path = 'new_entries/dataset_numpy_train2_padded'
-embedding_save_path = 'new_entries/embeddings'
+numpy_load_path = 'dataset_numpy_train_padded'
+embedding_save_path = 'embeddings'
 
 embedding_files = []
 for person_folder in os.listdir(numpy_load_path):
@@ -44,7 +44,6 @@ for batch in embedding_dataloader:
         output = net.forward_one(array)
         output = output.cpu().numpy()
         
-        # Manipulate file_id to get save path
         relative_path = os.path.relpath(file_id[0], numpy_load_path)
         save_path = os.path.join(embedding_save_path, relative_path)
         
